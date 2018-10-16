@@ -1,0 +1,27 @@
+{
+  "name": "mws-restaurant-stage-1",
+  "version": "1.0.0",
+  "description": "Basic packages for serving, watching and generating responsives images",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp-responsive": "^2.11.0",
+    "package.json": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flaex/mws-restaurant-stage-1.git"
+  },
+  "author": "Freddy Polanía",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Flaex/mws-restaurant-stage-1/issues"
+  },
+  "homepage": "https://github.com/Flaex/mws-restaurant-stage-1#readme"
+}
