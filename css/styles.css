@@ -55,6 +55,7 @@ nav h1 {
 nav h1 a {
   color: #fff;
   font-weight: 200;
+	letter-spacing: 10px;
   text-transform: uppercase;
 }
 #breadcrumb {
@@ -236,31 +237,86 @@ nav h1 a {
   color: #666;
 }
 
-@media only screen  and (min-device-width: 320px)  {
+.filter-options{ display: flex; flex-wrap: wrap;}
+#restaurants-list .wrapper { width: 100%}
+#restaurants-list li .restaurant-img { height: auto; width: 100%;}
+#restaurants-list li p , #restaurants-list li a {margin: 0; width: 100%}
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+		.filter-options select {width: 30%; margin-left: 3.5%; font-size: 1.2em;}
+		.filter-options h2 { width: 30%; text-align: right; padding: 0 20px; box-sizing: border-box;}
+		#restaurants-list li { display: flex; flex-wrap: wrap; }
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
 	nav {padding-top:4%; padding-bottom: 4%}
-	nav h1 a {font-size: 2.2em; font-weight: 200; letter-spacing: 10px}
+	nav h1 a {font-size: 2.2em;}
 	#map { height: 640px;}
-	.flex { display: flex; flex-wrap: wrap;}
-	.filter-options h2 { width: 30%; font-size:2.8em; line-height: 2.8em; text-align: right; padding: 0 20px; box-sizing: border-box;}
-	.filter-options select {width: 30%; margin-left: 3.5%; font-size: 1.2em;}
-	#restaurants-list li { margin:2%; padding:3%; display: flex; flex-wrap: wrap; }
-	#restaurants-list .wrapper { width: 100%}
-	#restaurants-list .restaurant-img { height: auto; width: 100%;}
-	#restaurants-list li h1 {margin: 0; font-size: 3.4em; line-height: 1.4em; width: 100%}
-	#restaurants-list p { margin: 0; font-size: 2.8em; width: 100%}
+	.filter-options h2 {font-size:2.8em; line-height: 2.8em;}
+	#restaurants-list li { margin:2%; padding:3%;}
+	#restaurants-list li h1 { font-size: 3.4em; line-height: 1.4em;}
+	#restaurants-list li p { font-size: 2.8em;}
 	#restaurants-list li a {font-size: 2.2em; margin: 1.5% 0 0; padding: 2% 3.5%}
 	#footer {font-size: 2.0em; letter-spacing: 1px; padding: 3.5%;}
 }
 
-@media only screen and (min-device-width: 768px)  {
-	#map { height: 380px;}
-	.filter-options h2 {font-size:2.2em;}
-	#restaurants-list {display: flex; flex-wrap: wrap;}
-	#restaurants-list li {width:48%; margin: 1%; box-sizing: border-box; }
-	#restaurants-list li h1 {font-size: 2.4em;}
-	#restaurants-list p {font-size: 2.2em}
-	#restaurants-list li a {font-size: 1.8em;}
-	#footer {font-size: 1.6em;}
+/* Landscape */
+@media only screen
+  and (min-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+		nav { width:100%; height: 10vh}
+		#maincontent {width: 100%; display: flex; flex-wrap: wrap; height: 82vh}
+		.filter-options h2 { font-size:1.2em; line-height:3.2em;}
+		nav h1 a {font-size: 1.2em; line-height: 2.0em}
+		#map-container { width: 50%; }
+		#map { height: 82vh}
+		#results { width: 50%; overflow-y: scroll;}
+		#restaurants-list li { margin:2%; padding:3%;}
+		#restaurants-list li .wrapper { width: 100%}
+		#restaurants-list li h1 { font-size: 2.4em; line-height: 1.4em;}
+		#restaurants-list li p { font-size: 1.8em;}
+		#restaurants-list li a {font-size: 1.2em; margin: 1.5% 0 0; padding: 2% 3.5%}
+		footer {font-size: 0.9em; line-height: 3.6em; height: 8vh}
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1){
+		#map { height: 380px;}
+		.filter-options h2 {font-size:2.2em;}
+		#restaurants-list {display: flex; flex-wrap: wrap;}
+		#restaurants-list li {width:48%; margin: 1%; box-sizing: border-box; }
+		#restaurants-list li h1 {font-size: 2.4em;}
+		#restaurants-list p {font-size: 2.2em}
+		#restaurants-list li a {font-size: 1.8em;}
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+		nav h1 a {line-height: 3.0em;}
+		.filter-options h2 {font-size:2.2em;}
+		#restaurants-list {display: flex; flex-wrap: wrap;}
+		#restaurants-list li {width:48%; margin: 1%; box-sizing: border-box; }
+		#restaurants-list li h1 {font-size: 2.4em;}
+		#restaurants-list p {font-size: 2.2em}
+		#restaurants-list li a {font-size: 1.8em;}
+		#footer {line-height: 5.0em}
 }
 
 @media only screen and (min-device-width: 1024px)  {
