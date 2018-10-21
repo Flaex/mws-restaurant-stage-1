@@ -121,7 +121,7 @@ nav h1 a {
 }
 #restaurants-list li {
   background-color: #fff;
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
   text-align: left;
 }
 #restaurants-list .restaurant-img {
@@ -238,15 +238,15 @@ nav h1 a {
 }
 
 .filter-options{ display: flex; flex-wrap: wrap;}
-#restaurants-list .wrapper { width: 100%}
+#restaurants-list .img-wrapper { width: 100%}
 #restaurants-list li .restaurant-img { height: auto; width: 100%;}
 #restaurants-list li p , #restaurants-list li a {margin: 0; width: 100%}
+.filter-options select {width: 30%; margin-left: 3.5%; font-size: 1.2em;}
 
 /* Portrait and Landscape */
 @media only screen
   and (min-device-width: 320px)
   and (-webkit-min-device-pixel-ratio: 2) {
-		.filter-options select {width: 30%; margin-left: 3.5%; font-size: 1.2em;}
 		.filter-options h2 { width: 30%; text-align: right; padding: 0 20px; box-sizing: border-box;}
 		#restaurants-list li { display: flex; flex-wrap: wrap; }
 }
@@ -280,12 +280,11 @@ and (orientation: portrait) {
 		#map { height: 82vh}
 		#results { width: 50%; overflow-y: scroll;}
 		#restaurants-list li { margin:2%; padding:3%;}
-		#restaurants-list li .wrapper { width: 100%}
-		#restaurants-list li h1 { font-size: 2.4em; line-height: 1.4em;}
+		#restaurants-list li .img-wrapper { width: 100%}
+		#restaurants-list li h1 { font-size: 2em; line-height: 1.4em;}
 		#restaurants-list li p { font-size: 1.8em;}
 		#restaurants-list li a {font-size: 1.2em; margin: 1.5% 0 0; padding: 2% 3.5%}
 		footer {font-size: 0.9em; line-height: 3.6em; height: 8vh}
-
 }
 
 /* Portrait */
@@ -298,27 +297,63 @@ and (orientation: portrait) {
 		#restaurants-list {display: flex; flex-wrap: wrap;}
 		#restaurants-list li {width:48%; margin: 1%; box-sizing: border-box; }
 		#restaurants-list li h1 {font-size: 2.4em;}
-		#restaurants-list p {font-size: 2.2em}
-		#restaurants-list li a {font-size: 1.8em;}
-
+		#restaurants-list li  p {font-size: 2.2em !important}
+		#restaurants-list li a {font-size: 1.8em !important;}
+		#footer { font-size: 1.5em; line-height: 1.5em}
 }
 
 /* Landscape */
 @media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
+  and (min-device-width: 1024px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 1) {
 		nav h1 a {line-height: 3.0em;}
-		.filter-options h2 {font-size:2.2em;}
+		.filter-options h2 {font-size:1.2em;}
 		#restaurants-list {display: flex; flex-wrap: wrap;}
 		#restaurants-list li {width:48%; margin: 1%; box-sizing: border-box; }
-		#restaurants-list li h1 {font-size: 2.4em;}
-		#restaurants-list p {font-size: 2.2em}
-		#restaurants-list li a {font-size: 1.8em;}
+		#restaurants-list li h1 {font-size:1.3em;}
+		#restaurants-list li p {font-size: 1.1em}
+		#restaurants-list li a {font-size: 1em;}
 		#footer {line-height: 5.0em}
 }
 
-@media only screen and (min-device-width: 1024px)  {
-	nav h1 a {height: 80px;}
+/* iPad Pro Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+		nav h1 a {font-size: 1.8em;}
+}
+
+/* iPad Pro Landscape */
+@media only screen
+  and (min-device-width: 1024px)
+	and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+		nav h1 a {line-height:3.8em;}
+		#footer {line-height: 7.0em}
+}
+
+
+@media screen
+  and (min-device-width: 1440px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+		.filter-options { padding: 0 3.8% }
+		#maincontent { max-width: 1280px; margin: 0 auto;}
+		nav { width:100%; height: 8vh}
+		#maincontent {width: 100%; display: flex; flex-wrap: wrap; height: 87vh}
+		.filter-options h2 { font-size:1.2em; line-height:3.2em;}
+		nav h1 a {font-size: 1em; line-height: 3.4em}
+		#map-container { width: 50%; }
+		#map { height: 87vh}
+		#results { width: 50%; overflow-y: scroll;}
+		::-webkit-scrollbar { display: none;}
+		#restaurants-list li {width:98%; margin: 1%; padding: 2%; display: grid;  grid-auto-flow: column; grid-template-columns: 35% 65%;}
+		#restaurants-list li .img-wrapper { grid-row: 1/span 2;}
+		#restaurants-list li .info-wrapper { padding-left: 1.5%;}
+		#restaurants-list li h1 { font-size: 1.8em; line-height: 1.4em;}
+		#restaurants-list li p { font-size: 1.6em;}
+		#restaurants-list li a { width:auto;font-size: 1em; margin: 1.5% 0 0; padding: 2% 3.5%; box-sizing: border-box; }
+		footer {font-size: 0.9em; line-height: 3.6em !important; height: 5vh}
 }
