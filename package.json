@@ -5,11 +5,13 @@
   "main": "gulpfile.js",
   "dependencies": {
     "browser-sync": "^2.26.3",
+    "graphicsmagick": "0.0.1",
     "gulp-responsive": "^2.11.0",
     "package.json": "^2.0.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-responsive-images": "0.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

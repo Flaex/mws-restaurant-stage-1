@@ -24,28 +24,21 @@ gulp.task('images', () => {
 /* https://github.com/mahnunchik/gulp-responsive/blob/master/examples/multiple-resolutions.md */
 gulp.task('responsive-images', () => {
   return gulp.src('img/*.{jpg,png}')
-    .pipe($.responsive({
+    .pipe(responsive({
       // Resize all JPG images to three different sizes: 200, 500, and 630 pixels
       '*.jpg': [{
-        width: 200,
-        rename: { suffix: '-200px' },
+        width: 300,
+        rename: { suffix: '-a' },
       }, {
-        width: 500,
-        rename: { suffix: '-500px' },
+        width: 330,
+        rename: { suffix: '-b' },
       }, {
-        width: 630,
-        rename: { suffix: '-630px' },
+        width: 360,
+        rename: { suffix: '-c' },
       }, {
-        // Compress, strip metadata, and rename original image
-        rename: { suffix: '-original' },
-      }],
-      // Resize all PNG images to be retina ready
-      '*.png': [{
-        width: 250,
-      }, {
-        width: 250 * 2,
-        rename: { suffix: '@2x' },
-      }],
+        width: 420,
+        rename: { suffix: '-d' },
+      }]
     }, {
       // Global configuration for all images
       // The output quality for JPEG, WebP and TIFF output formats
