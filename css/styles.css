@@ -56,12 +56,11 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-
     list-style: none;
     background-color: #eee;
-
     margin: 0;
-    width: calc(50%);
+		padding-inline-start: 3%;
+
 }
 
 /* Display list items side by side */
@@ -144,25 +143,7 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Details ====================== */
-.inside header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-.inside #map-container {
-  background: blue none repeat scroll 0 0;
-  position: fixed;
-}
-.inside #map {
-  background-color: #ccc;
-  height: 100%;
-  width: 100%;
 
-}
-.inside #footer {
-
-}
 #restaurant-name {
   color: #f18200;
   font-weight: 400;
@@ -206,7 +187,7 @@ nav h1 a {
 .filter-options{ display: flex; flex-wrap: wrap;}
 #restaurants-list .img-wrapper { width: 100%}
 .restaurant-img { height: auto; width: 100%;}
-.filter-options select {width: 30%; margin-left: 3.5%;}breadcrumb { width: 100%; padding-top: 2%}
+.filter-options select {width: 30%; margin-left: 3.5%;}
 
 /* Portrait and Landscape */
 @media only screen
@@ -215,8 +196,8 @@ nav h1 a {
 		.filter-options h2 { width: 30%; text-align: right; padding: 0 5px; box-sizing: border-box;}
 		#restaurants-list li { display: flex; flex-wrap: wrap; }
 		#restaurants-list li p { margin: 0}
-		#breadcrumb { width: 100%; padding-top: 1.5%; padding-bottom: 3%; padding-left: 3%}
 		#restaurant-hours td { font-size: 0.75em}
+		#breadcrumb {padding-top: 2%; padding-bottom: 3%}
 
 }
 
@@ -235,35 +216,16 @@ and (orientation: portrait) {
 	#restaurants-list li p { font-size: 1em;}
 	#restaurants-list li a {font-size: 0.8em; margin: 1.5% 0 0; padding: 2% 3.5%}
 	#breadcrumb { font-size: 0.7em}
-  .inside #map-container { height: 35%; width: 100%; 	top: 15vh}
-	#restaurant-container { padding: 2%; width: 100%; margin-top: 44vh; box-sizing: border-box;}
+	#restaurant-container { padding: 2%; width: 100%;box-sizing: border-box;}
 	#reviews-container {padding: 2%; width: 100%; box-sizing: border-box;}
 	#restaurant-name {font-size: 1.2em; margin: 3% 0 3%; line-height: 1.1;}
 	#restaurant-cuisine { font-size: 1.1em; padding: 1% 0; width: 100%;}
 	#restaurant-address {font-size: 0.9em; margin: 3% 0px;}
 	#restaurant-hours { width: 100%; }
 	#reviews-container h2 { font-size: 1.1em; padding-bottom: 1pt;}
-	#reviews-list li { margin: 0 0 2%; padding: 0 6.75% 7%; width: 85%;}
-	#reviews-list li p { font-size: 0.9em}
+	#reviews-list li { margin: 0 0 2%; padding: 7% 6.75% 7%; width: 85%;}
+	#reviews-list li p { font-size: 0.8em; line-height: 1.6em; margin-top:0em; margin-bottom: 0.25em}
 	#footer {font-size: 0.55em; letter-spacing: 1px; padding: 3.5%;}
-}
-
-/* Portrait */
-@media only screen
-	and (min-device-width: 360px)
-	and (max-device-width: 767px)
-	and (-webkit-min-device-pixel-ratio: 2)
-	and (orientation: portrait) {
-		.inside #map-container {top: 11vh}
-}
-
-/* Portrait */
-@media only screen
-	and (min-device-width: 375px)
-	and (max-device-width: 767px)
-	and (-webkit-min-device-pixel-ratio: 2)
-	and (orientation: portrait) {
-		.inside #map-container {top: 9vh}
 }
 
 /* Landscape */
@@ -283,8 +245,8 @@ and (orientation: portrait) {
 		#restaurants-list li h1 { font-size: 1em; line-height: 1.4em;}
 		#restaurants-list li p { font-size: 0.8em;}
 		#restaurants-list li a {font-size: 0.5em; margin: 1.5% 0 0; padding: 2% 3.5%}
-		.inside #map-container { height: 100vh; width: 50%; top: 21vh}
-		#restaurant-container { padding: 2%; width: 50%; margin-top: 21vh; margin-left: 50%; box-sizing: border-box;}
+		#restaurant-container { padding: 2%; width: 50%; overflow-y: scroll; box-sizing: border-box;}
+		::-webkit-scrollbar { display: none;}
 		footer {font-size: 0.55em; line-height: 3.6em; height: 8vh}
 }
 
@@ -301,6 +263,11 @@ and (orientation: portrait) {
 		#restaurants-list li h1 {font-size: 1.6em;}
 		#restaurants-list li  p {font-size: 1.4em}
 		#restaurants-list li a {font-size: 1.2em}
+		#breadcrumb { font-size: 1.1em}
+		#restaurant-hours td { font-size: 1em;}
+		#restaurant-name { font-size: 1.4em;}
+		#restaurant-address {font-size: 1.2em;}
+		#reviews-list li p { font-size: 1em;}
 		#footer { font-size: 0.8em;}
 }
 
