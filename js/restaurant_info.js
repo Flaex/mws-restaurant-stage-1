@@ -56,7 +56,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const picture = document.getElementById('restaurant-img-container');
-  
+
   /*300px image width */
   const imageA = document.createElement('source');
   imageA.media = '(min-width:320px) and (max-width:359px)'
@@ -71,7 +71,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   /*420px image width*/
   const imageD = document.createElement('source');
-  imageD.media = '(min-width:1024px) and (max-height:1366px)'
+  imageD.media = '(min-width:1024px) and (max-width:1366px)'
   imageD.srcset = DBHelper.imageUrlForRestaurantD(restaurant);
   picture.append(imageD);
 

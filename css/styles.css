@@ -163,9 +163,6 @@ nav h1 a {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
 }
-#reviews-container {
-  padding: 30px 40px 80px;
-}
 #reviews-container h2 {
   color: #f58500;
   font-weight: 400;
@@ -197,7 +194,7 @@ nav h1 a {
 		#restaurants-list li { display: flex; flex-wrap: wrap; }
 		#restaurants-list li p { margin: 0}
 		#restaurant-hours td { font-size: 0.75em}
-		#breadcrumb {padding-top: 2%; padding-bottom: 3%}
+		#breadcrumb {padding-top: 1%; padding-bottom: 2%; font-size: 0.7em}
 
 }
 
@@ -218,7 +215,7 @@ and (orientation: portrait) {
 	#breadcrumb { font-size: 0.7em}
 	#restaurant-container { padding: 2%; width: 100%;box-sizing: border-box;}
 	#reviews-container {padding: 2%; width: 100%; box-sizing: border-box;}
-	#restaurant-name {font-size: 1.2em; margin: 3% 0 3%; line-height: 1.1;}
+	#restaurant-name {font-size: 1.2em; margin: 3% 0 3%; line-height: 1.1em;}
 	#restaurant-cuisine { font-size: 1.1em; padding: 1% 0; width: 100%;}
 	#restaurant-address {font-size: 0.9em; margin: 3% 0px;}
 	#restaurant-hours { width: 100%; }
@@ -235,18 +232,24 @@ and (orientation: portrait) {
   and (orientation: landscape) {
 		nav { width:100%; height: 10vh}
 		#maincontent {width: 100%; display: flex; flex-wrap: wrap; height: 82vh}
+		.inside #maincontent { height: 72.75vh}
 		.filter-options h2 { font-size:0.65em; line-height:3.2em;}
 		nav h1 a {font-size:  0.65em;}
-		#map-container { width: 50%; }
-		#map { height: 82vh}
+		#map-container { width: 50%;}
+		#map { height: 100%}
 		#results { width: 50%; overflow-y: scroll;}
 		#restaurants-list li { margin:2%; padding:3%;}
 		#restaurants-list li .img-wrapper { width: 100%}
 		#restaurants-list li h1 { font-size: 1em; line-height: 1.4em;}
 		#restaurants-list li p { font-size: 0.8em;}
 		#restaurants-list li a {font-size: 0.5em; margin: 1.5% 0 0; padding: 2% 3.5%}
-		#restaurant-container { padding: 2%; width: 50%; overflow-y: scroll; box-sizing: border-box;}
+		#restaurant-container { padding: 2%; width: 50%; height: 72vh; overflow-y: scroll; box-sizing: border-box;}
 		::-webkit-scrollbar { display: none;}
+		#restaurant-name {font-size: 1em; margin: 3% 0 3%; line-height: 1.1em;}
+		p#restaurant-cuisine, p#restaurant-address, #reviews-list li p { margin: 0;}
+		#reviews-container { padding: 4%}
+		#reviews-list li { font-size: 0.85em; line-height: 1.6em; padding: 4%}
+		#reviews-container h2 { font-size: 1em}
 		footer {font-size: 0.55em; line-height: 3.6em; height: 8vh}
 }
 
@@ -277,13 +280,22 @@ and (orientation: portrait) {
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 1) {
 		nav h1 a {font-size: 1em; line-height: 3.0em}
+		#maincontent { height: 82vh}
+		.inside #maincontent { height: 75vh}
 		.filter-options h2 {font-size:1.2em;}
 		#restaurants-list {display: flex; flex-wrap: wrap;}
 		#restaurants-list li {width:48%; margin: 1%; box-sizing: border-box; }
 		#restaurants-list li h1 {font-size:1.1em;}
 		#restaurants-list li p {font-size: 0.9em}
 		#restaurants-list li a {font-size: 0.8em;}
-		#footer {font-size: 0.7em; line-height: 5.0em}
+		#breadcrumb { font-size: 1.2em}
+		#restaurant-name { font-size: 1.8em;line-height: 1.4em; margin: 0}
+		#restaurant-cuisine { font-size: 1.5em}
+		#restaurant-address { font-size: 1.3em; line-height: 1.6em}
+		#restaurant-hours td { font-size: 1.15em }
+		#reviews-container h2 { font-size: 1.4em}
+		#reviews-list li p { font-size: 1.3em;}
+		#footer { font-size: 0.8em;}
 }
 
 /* Portrait*/
@@ -292,7 +304,16 @@ and (orientation: portrait) {
 	and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2) {
 		nav h1 a {font-size:1.1em; line-height: 3.6em}
-		#footer {line-height: 7.0em}
+		#maincontent { height: 82vh}
+		.inside #maincontent { height: 75.4vh}
+		#breadcrumb { font-size: 1.2em}
+		#restaurant-name { font-size: 2.1em;line-height: 1.4em; margin: 0}
+		#restaurant-cuisine { font-size: 2.2em}
+		#restaurant-address { font-size: 1.6em; line-height: 1.9em}
+		#restaurant-hours td { font-size: 1.45em }
+		#reviews-container h2 { font-size: 1.8em}
+		#reviews-list li p { font-size: 1.6em; line-height: 1.8em}
+		#footer { font-size: 0.8em; line-height: 6.0em}
 }
 
 @media screen
@@ -300,11 +321,12 @@ and (orientation: portrait) {
 		.filter-options { padding: 0 3.8% }
 		#maincontent { max-width: 1280px; margin: 0 auto;}
 		nav { width:100%; height: 8vh}
-		#maincontent {width: 100%; display: flex; flex-wrap: wrap; height: 87vh}
+		#maincontent {display: flex; flex-wrap: wrap; height: 87vh}
+		.inside #maincontent { height: 83.5vh}
 		.filter-options h2 { font-size:1.2em; line-height:3.2em;}
 		nav h1 a {font-size: 1em; line-height: 2.5em}
 		#map-container { width: 50%; }
-		#map { height: 87vh}
+		#map { height: 100%}
 		#results { width: 50%; overflow-y: scroll;}
 		::-webkit-scrollbar { display: none;}
 		#restaurants-list li {width:98%; margin: 1%; padding: 2%; display: grid;  grid-auto-flow: column; grid-template-columns: 35% 65%;}
@@ -313,5 +335,23 @@ and (orientation: portrait) {
 		#restaurants-list li h1 { font-size: 1.4em; line-height: 1.4em;}
 		#restaurants-list li p { font-size: 1.2em; line-height: 0.7em}
 		#restaurants-list li a { width:auto; font-size: 0.9em; margin: 1.5% 0 0; padding: 2% 3.5%; box-sizing: border-box; }
-		footer {font-size: 0.9em; line-height: 3.6em !important; height: 5vh}
+		#breadcrumb { padding: 0 10%; margin: 0 auto;}
+		#restaurant-container { padding: 2%; width: 50%; height: 100%; overflow-y: scroll; box-sizing: border-box;}
+		::-webkit-scrollbar { display: none;}
+		#restaurant-name { font-size: 1.6em;line-height: 1.4em; margin: 0}
+		#restaurant-cuisine { font-size: 1.4em; margin: 0}
+		#restaurant-address { font-size: 1.2em; line-height: 1.9em}
+		#restaurant-hours td { font-size: 1.1em }
+		#reviews-container h2 { font-size: 1.1em; margin-top: 2%}
+		#reviews-list li { padding: 3%}
+		#reviews-list li p { font-size: 1em; line-height: 1.8em}
+		footer {font-size: 0.9em; line-height: 3em ; height: 5vh}
+}
+
+@media screen
+  and (min-device-width: 1920px) {
+		#maincontent {height: 87vh}
+		.inside #maincontent { height: 84.1vh}
+		nav h1 a {line-height: 2.9em;}
+		footer {line-height: 3.em}
 }
