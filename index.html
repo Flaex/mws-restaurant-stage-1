@@ -10,19 +10,19 @@
 </head>
 
 <body>
-  <header>
+  <header role="banner">
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a href="/">New york's restaurants</a></h1>
     </nav>
   </header>
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" role="application"></div>  
     </section>
     <section id="results">
-      <div class="filter-options">
-        <h2 tabindex="0">Filter Results</h2>
+      <div class="filter-options" tabindex="0" aria-labelledby="fr">
+        <h2 id="fr">Filter Results</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
@@ -39,7 +39,7 @@
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQhe9nSUBaOnvNSv7DRj7g430Gqt94umQ&libraries=places&callback=initMap"></script>
 
 
-  <footer id="footer">
+  <footer id="footer" role="contentinfo">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
 

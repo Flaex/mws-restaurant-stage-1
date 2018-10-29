@@ -16,11 +16,14 @@ window.initMap = () => {
       });
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
-      google.maps.event.addListener(this.map, 'tilesloaded', ()=> {
-        const images = document.querySelectorAll('#map div img');
-        images.forEach(function(image) {
-          image.alt = "Google maps image";
-        });
+      google.maps.event.addListener(this.map, 'ariaInvisible', ()=> {
+        const firstDiv = document.querySelector('.gm-style').firstElementChild;
+        firstDiv.setAttribute('aria-hidden', 'true');
+        firstDiv.setAttribute('tabIndex', '-1');
+      });
+      google.maps.event.addListener(this.map, 'iframeInvisible', ()=> {
+        const firstFrame = document.querySelector('iframe');
+        firstFrame.setAttribute('tabIndex', '-1');
       });
     }
   });

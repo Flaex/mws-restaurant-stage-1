@@ -12,10 +12,10 @@
 
 <body class="inside">
   <!-- Beginning header -->
-  <header>
+  <header role="banner">
     <!-- Beginning nav -->
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a href="/">  Review Detail</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
     <ul id="breadcrumb" >
@@ -30,7 +30,7 @@
   <main id="maincontent">
     <!-- Beginning map -->
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" role="application"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
@@ -38,7 +38,7 @@
       <h1 id="restaurant-name"></h1>
       <picture id="restaurant-img-container"></picture>
       <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
+      <address id="restaurant-address"></address>
       <table id="restaurant-hours"></table>
       <div id="reviews-container">
         <ul id="reviews-list"></ul>
@@ -52,7 +52,7 @@
   <!-- End main -->
 
   <!-- Beginning footer -->
-  <footer id="footer">
+  <footer id="footer" role="contentinfo">>
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
   <!-- End footer -->

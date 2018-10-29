@@ -80,11 +80,14 @@ window.initMap = () => {
     center: loc,
     scrollwheel: false
   });
-  google.maps.event.addListener(this.map, 'tilesloaded', ()=> {
-    const images = document.querySelectorAll('#map img');
-    images.forEach(function(image) {
-      image.alt = "Google maps image";
-    });
+  google.maps.event.addListener(this.map, 'ariaInvisible', ()=> {
+    const firstDiv = document.querySelector('.gm-style').firstElementChild;
+    firstDiv.setAttribute('aria-hidden', 'true');
+    firstDiv.setAttribute('tabIndex', '-1');
+  });
+  google.maps.event.addListener(this.map, 'iframeInvisible', ()=> {
+    const firstFrame = document.querySelector('iframe');
+    firstFrame.setAttribute('tabIndex', '-1');
   });
   updateRestaurants();
 }
@@ -184,22 +187,23 @@ createRestaurantHTML = (restaurant) => {
   li.append(info);
 
   const name = document.createElement('h1');
-  name.role = 'heading';  
   name.tabIndex = '0';
   name.innerHTML = restaurant.name;
   info.append(name);
 
   const neighborhood = document.createElement('p');
+  neighborhood.setAttribute('name', 'Neighborhood');
   neighborhood.tabIndex = '0';
   neighborhood.innerHTML = restaurant.neighborhood;
   info.append(neighborhood);
 
-  const address = document.createElement('p');
+  const address = document.createElement('address');
   address.tabIndex = '0';
   address.innerHTML = restaurant.address;
   info.append(address);
 
   const more = document.createElement('a');
+  more.setAttribute('role', 'button');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   info.append(more)
