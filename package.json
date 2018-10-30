@@ -9,7 +9,8 @@
     "gulp-responsive": "^2.11.0",
     "lodash": "^4.17.11",
     "minimatch": "^3.0.4",
-    "package.json": "^2.0.1"
+    "package.json": "^2.0.1",
+    "workbox-cli": "^3.6.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
