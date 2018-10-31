@@ -33,8 +33,8 @@ self.addEventListener('install', (event) => {
         'js/restaurant_info.js',
         'data/restaurants.json',
         'css/styles.css',
-        'fonts/memnYaGs126MiZpBA-UFUKWyV9hvIqOxjaPXZSk.woff2',
-        'fonts/memnYaGs126MiZpBA-UFUKWyV9hnIqOxjaPXZSk.woff2'
+        'fonts/mem5YaGs126MiZpBA-UN_r8OUuhp.woff2',
+        'fonts/mem8YaGs126MiZpBA-UFVZ0b.woff2'
       ]);
     })
   );
