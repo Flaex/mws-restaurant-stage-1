@@ -6,9 +6,9 @@ workbox.setConfig({
 });
 
 if (workbox) {
-  console.log(`Yay! Workbox is loaded ??`);
+  console.log(`Yay! Workbox is loaded !!`);
 } else {
-  console.log(`Boo! Workbox didn't load ??`);
+  console.log(`Boo! Workbox didn't load !!`);
 }
 
 workbox.routing.registerRoute(
@@ -21,26 +21,28 @@ workbox.routing.registerRoute(
   })
 );
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open('mwsrs1-v1').then(function(cache) {
+    caches.open('mwsrs1-v1').then((cache) => {
       return cache.addAll([
         '/',
+        '/restaurant.html',
+        '/favicon.ico',
         'js/dbhelper.js',
         'js/main.js',
         'js/restaurant_info.js',
-        'css/style.css',
-        '/favicon.ico',
-        'https://fonts.gstatic.com/s/opensans/v15/memnYaGs126MiZpBA-UFUKWyV9hvIqOxjaPXZSk.woff2',
-        'https://fonts.gstatic.com/s/opensans/v15/memnYaGs126MiZpBA-UFUKWyV9hnIqOxjaPXZSk.woff2'
+        'data/restaurants.json',
+        'css/styles.css',
+        'fonts/memnYaGs126MiZpBA-UFUKWyV9hvIqOxjaPXZSk.woff2',
+        'fonts/memnYaGs126MiZpBA-UFUKWyV9hnIqOxjaPXZSk.woff2'
       ]);
     })
   );
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
+    caches.match(event.request).then((response) => {
         if (response) {
           return response;
         }
@@ -50,12 +52,12 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', (event) => {
   const cacheWhitelist = ['mwsrs1-v1', 'image-cache-v1'];
   event.waitUntil(
-    caches.keys().then(function(cacheNames) {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map(function(cacheName) {
+        cacheNames.map((cacheName) => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
             return caches.delete(cacheName);
           }

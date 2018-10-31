@@ -340,7 +340,8 @@ and (orientation: portrait) {
 		#restaurants-list li h1 { font-size: 1.4em; line-height: 1.4em;}
 		#restaurants-list li p { font-size: 1.2em; line-height: 0.7em}
 		#restaurants-list li a { width:auto; font-size: 0.9em; margin: 1.5% 0 0; padding: 2% 3.5%; box-sizing: border-box; }
-		#breadcrumb { padding: 0 10%; margin: 0 auto;}
+		#breadcrumb { padding: 0.5% 0 0.5% 0; max-width: 1280px; margin: 0 auto;}
+		#breadcrumb li { padding-left: 1%}
 		#restaurant-container { padding: 2%; width: 50%; height: 100%; overflow-y: scroll; box-sizing: border-box;}
 		::-webkit-scrollbar { display: none;}
 		#restaurant-name { font-size: 1.6em;line-height: 1.4em; margin: 0}
