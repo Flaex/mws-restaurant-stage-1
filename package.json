@@ -4,7 +4,7 @@
   "description": "Basic packages for serving, watching and generating responsives images",
   "main": "gulpfile.js",
   "dependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.27.10",
     "graphicsmagick": "0.0.1",
     "gulp-responsive": "^2.11.0",
     "lodash": "^4.17.11",
